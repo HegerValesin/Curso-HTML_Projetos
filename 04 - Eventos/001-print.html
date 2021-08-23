@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event: afterprint e beforeprint</title>
+  </head>
+  <!--Podemos usar no body temos que usar o js para executar os comando.
+  -onbeforeprint="debug(event)" - Ele chama a função js antes da tela de impressão.
+  -onafterprint="debug(event)" - Ele chama a função js e é executado depois que você   -imprime ou cancela a impressão.
+  -os dois evento podem ocorre numa função para definir que o formulário já foi impresso.
+  -->
+  <body onbeforeprint="debug(event)" onafterprint="debug(event)">
+    <script>
+      function debug(e) {
+        alert("Evento: " + e.type);
+      }
+    </script>
+  </body>
+</html>

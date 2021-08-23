@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evento change</title>
+  </head>
+  <body>
+    <!--
+     Quando executamos o onChange o evento é disparado quando tiramos o foco e ele só volta a executar quando o objeto é alterado, se tirarmos o foco sem alterar o conteúdo ele não executa o evento.
+     Diferente do evento onBlur que é executado todo vez que se perde o foco.
+    -->
+    <input type="text" onblur="debug(event)" onchange="debug(event)" />
+
+    <script>
+      function debug(e) {
+        console.log("Evento: " + e.type);
+        //alert("Evento: " + e.type);
+      }
+    </script>
+  </body>
+</html>

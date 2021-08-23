@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event: beforeunload</title>
+  </head>
+  <!--
+    Evento dificulta você sair da pagina e sempre que voce tentar recarregar a pagina ele executa o evento e a mensagem que ele traz é diferente da que você coloca.
+    Esse evento pode ser colocado no momento que voce tenta fecha a pagina ou no momento que voce tenta voltar.
+
+    Quando ocorre: nas paginas de noticias que ele fazem você fica na pagina vendo as outras noticias ou propagando deles.
+  -->
+  <body onbeforeunload="return debug(event)">
+    <script>
+      function debug(e) {
+        console.log("Evento: " + e.type);
+        return "Evento: " + e.type;
+      }
+    </script>
+  </body>
+</html>

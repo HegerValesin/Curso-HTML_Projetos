@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evento hashchange</title>
+  </head>
+  <body onhashchange="debug(event)">
+    <!--
+      O evento é disparado quando alteramos o Has, o final da nossa URL
+
+      Como usar:
+      você pode usar para uma configuração o definir uma variável
+
+      Usar também em formulários.
+
+    -->
+    <script>
+      function debug(e) {
+        console.log("Evento: " + e.type);
+        alert("Evento: " + e.type);
+      }
+    </script>
+  </body>
+</html>

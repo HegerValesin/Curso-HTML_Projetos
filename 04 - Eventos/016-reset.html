@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evento: reset</title>
+  </head>
+  <body>
+    <!--
+     O evento reset ele é usado em formulários, limpa todos os campos.
+    -->
+
+    <form onreset="debug(event)">
+      <input type="text" />
+      <button type="reset">Limpar</button>
+    </form>
+    <script>
+      function debug(e) {
+        console.log("Evento: " + e.type);
+        //alert("Evento: " + e.type);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data_</title>
+</head>
+<body>
+  <!--com o atributo data-"alguma coisa" voce armazena informações que permite você pode usar a traves de JS e no browse só é visto o nome-->
+  <ul>
+    <li data-id="1" data-email="hegervfp@gmail.com">Heger Valesin</li>
+    <li data-id="2" data-email="diviannyv@gmail.com">Divys Fontes</li>
+  </ul>
+
+  <!--No JS vamos fazer com que possamos acessar as informações do data- usando o comando abaixo e deseja acessar um item especifico como email basta usar no final do dataset um .email ele traz a informação.-->
+  <script>
+    document.querySelectorAll('li').forEach(liEl => {
+      console.log(liEl.dataset.email)
+    })
+  </script>
+</body>
+</html>

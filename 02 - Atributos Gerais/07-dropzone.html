@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropzone</title>
+  <style>
+    .caixa {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      background: blue;
+    }
+
+    .drop {
+      width: 200px;
+      height: 240px;
+      margin: 10px;
+      border: crimson 2px solid;
+    }
+
+  </style>
+</head>
+<body>
+    <!--local onde recebe o arquivo arrastado
+    - Usando sem o JS com o dopzone copy ou Move o item era para ser movido ou copiada, mas devido a nova versão dos browsers não estarem disponível a função não ocorre como o esperado, com isso vamos usar o JS.
+    -->
+
+    <div id="c1" class="caixa" draggable="true">C1</div>
+    <div id="c2" class="caixa" draggable="true">C2</div>
+    <div class="drop" dropzone="copy"></div>
+
+    <script>
+      const caixas = document.querySelectorAll('.caixa');
+      const dropZone = document.querySelector('[dropzone')
+
+      caixas.forEach(caixaEl => {
+        caixaEl.addEventListener('dragstart', e => {
+
+          e.dataTransfer.setData('Text', e.target.id);
+          console.log(e.target.id)
+        })
+      });
+
+      dropZone.addEventListener('dragover', e => {
+        e.preventDefault();
+      })
+
+      dropZone.addEventListener('drop', e => {
+          //Constante onde pega o id do elemento arrastado como texto
+          const id = e.dataTransfer.getData('Text');
+          
+          //transforma o texto em um elemento para ser jogado dentro o getElementById
+          const element = document.getElementById(id);
+
+          e.target.appendChild(element);
+      })
+    </script>
+</body>
+</html>
